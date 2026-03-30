@@ -309,7 +309,7 @@ function StepVideo({
               </div>
             ) : (
               <div className="chapter-list">
-                {sortedChapters.map((chapter, index) => {
+                {sortedChapters.map((chapter) => {
                   const originalIndex = chapters.indexOf(chapter);
                   return (
                     <div key={originalIndex} className="chapter-card">

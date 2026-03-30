@@ -1,0 +1,313 @@
+.video-chapter-editor {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.video-chapter-editor--loading,
+.video-chapter-editor--empty {
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border: 1px solid #e3ece8;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 18px 48px rgba(11, 33, 28, 0.08);
+}
+
+.video-chapter-editor__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.video-chapter-editor__title {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #18302b;
+}
+
+.video-chapter-editor__subtitle {
+  margin: 0.4rem 0 0;
+  color: #58706b;
+  line-height: 1.5;
+}
+
+.video-chapter-editor__header-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.video-chapter-editor__playback,
+.video-chapter-editor__capture,
+.video-chapter-editor__save,
+.video-chapter-editor__link,
+.video-chapter-editor__remove {
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.video-chapter-editor__playback,
+.video-chapter-editor__capture,
+.video-chapter-editor__save {
+  background: #1d8f73;
+  color: #fff;
+}
+
+.video-chapter-editor__playback,
+.video-chapter-editor__save {
+  padding: 0.8rem 1.1rem;
+  white-space: nowrap;
+}
+
+.video-chapter-editor__capture {
+  padding: 0.85rem 1.1rem;
+}
+
+.video-chapter-editor__playback:hover,
+.video-chapter-editor__capture:hover,
+.video-chapter-editor__save:hover {
+  background: #156f59;
+}
+
+.video-chapter-editor__save:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.video-chapter-editor__layout {
+  display: grid;
+  gap: 1rem;
+}
+
+.video-chapter-editor__player,
+.video-chapter-editor__chapters {
+  background: #fff;
+  border: 1px solid #e3ece8;
+  border-radius: 24px;
+  padding: 1rem;
+  box-shadow: 0 18px 48px rgba(11, 33, 28, 0.08);
+}
+
+.video-chapter-editor__frame {
+  position: relative;
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #08110f;
+}
+
+.video-chapter-editor__video {
+  display: block;
+  width: 100%;
+  max-height: 520px;
+  background: #000;
+}
+
+.video-chapter-editor__toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.video-chapter-editor__timestamp {
+  color: #31524a;
+  font-size: 0.95rem;
+}
+
+.video-chapter-editor__duration {
+  color: #58706b;
+}
+
+.video-chapter-editor__error,
+.video-chapter-editor__success {
+  margin: 1rem 0 0;
+  font-size: 0.92rem;
+}
+
+.video-chapter-editor__error {
+  color: #c05050;
+}
+
+.video-chapter-editor__success {
+  color: #1d8f73;
+}
+
+.video-chapter-editor__chapters-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.video-chapter-editor__chapters-header h3 {
+  margin: 0;
+  color: #18302b;
+}
+
+.video-chapter-editor__chapters-header span {
+  min-width: 2rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: #edf7f3;
+  color: #1d8f73;
+  text-align: center;
+  font-weight: 700;
+}
+
+.video-chapter-editor__empty {
+  margin: 0;
+  color: #58706b;
+  line-height: 1.6;
+}
+
+.video-chapter-editor__chapter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-height: 720px;
+  overflow-y: auto;
+}
+
+.video-chapter-editor__chapter-item {
+  display: grid;
+  gap: 0.85rem;
+  border: 1px solid #dde9e4;
+  border-radius: 20px;
+  background: #fbfdfc;
+  padding: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.video-chapter-editor__chapter-item.is-active {
+  border-color: #1d8f73;
+  box-shadow: 0 10px 24px rgba(29, 143, 115, 0.12);
+}
+
+.video-chapter-editor__chapter-preview {
+  display: grid;
+  gap: 0.3rem;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.video-chapter-editor__chapter-time {
+  color: #1d8f73;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.video-chapter-editor__chapter-preview-title {
+  color: #18302b;
+  font-weight: 700;
+}
+
+.video-chapter-editor__chapter-preview-description {
+  color: #58706b;
+  line-height: 1.45;
+  font-size: 0.92rem;
+}
+
+.video-chapter-editor__field-group,
+.video-chapter-editor__time-grid {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.video-chapter-editor__time-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.video-chapter-editor__label {
+  display: grid;
+  gap: 0.45rem;
+  color: #18302b;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.video-chapter-editor__input,
+.video-chapter-editor__textarea {
+  width: 100%;
+  border: 1px solid #c9d8d2;
+  border-radius: 16px;
+  padding: 0.9rem 1rem;
+  font: inherit;
+  color: #18302b;
+  background: #f8fbfa;
+}
+
+.video-chapter-editor__textarea {
+  resize: vertical;
+}
+
+.video-chapter-editor__actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.video-chapter-editor__link,
+.video-chapter-editor__remove {
+  padding: 0.65rem 0.95rem;
+  border: 1px solid #cfe0d8;
+  background: #fff;
+  color: #31524a;
+}
+
+.video-chapter-editor__link:hover,
+.video-chapter-editor__remove:hover {
+  background: #f3f8f6;
+}
+
+.video-chapter-editor__remove {
+  margin-left: auto;
+  border-color: #f1caca;
+  color: #a64545;
+}
+
+@media (min-width: 960px) {
+  .video-chapter-editor__layout {
+    grid-template-columns: minmax(0, 1.35fr) minmax(320px, 1fr);
+    align-items: start;
+  }
+}
+
+@media (max-width: 680px) {
+  .video-chapter-editor__header,
+  .video-chapter-editor__toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .video-chapter-editor__header-actions {
+    justify-content: stretch;
+  }
+
+  .video-chapter-editor__time-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .video-chapter-editor__actions {
+    flex-direction: column;
+  }
+
+  .video-chapter-editor__remove {
+    margin-left: 0;
+  }
+}

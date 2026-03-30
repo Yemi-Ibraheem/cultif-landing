@@ -1,0 +1,70 @@
+.country-filter-scroller {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 1rem 0.75rem;
+  min-height: 52px;
+  align-items: center;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.country-filter-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.country-filter-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid #e5e7eb;
+  background: white;
+  color: #374151;
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.country-filter-chip:hover {
+  background: #f9fafb;
+  border-color: #00bfa5;
+}
+
+.country-filter-chip.active {
+  background: #00bfa5;
+  border-color: #00bfa5;
+  color: white;
+}
+
+.country-filter-chip.active:hover {
+  background: #00897b;
+  border-color: #00897b;
+}
+
+.country-chip-flag {
+  width: 24px;
+  height: 18px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+}
+
+.country-chip-all-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.country-filter-sentinel {
+  flex-shrink: 0;
+  width: 20px;
+  min-width: 20px;
+  height: 1px;
+  pointer-events: none;
+  visibility: hidden;
+}

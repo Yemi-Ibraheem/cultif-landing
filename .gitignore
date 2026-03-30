@@ -1,0 +1,41 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Convex
+.convex/
+
+# Sensitive setup docs (contain API keys / secrets — never commit)
+docs/POLAR_SETUP.md
+
+# TestSprite generated temp files (contain API keys, proxy credentials)
+testsprite_tests/tmp/
+
+# TestSprite test credentials (never commit)
+testsprite_tests/.env

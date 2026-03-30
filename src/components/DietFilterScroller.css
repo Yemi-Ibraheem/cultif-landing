@@ -1,0 +1,66 @@
+.diet-filter-scroller {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    padding: 0.5rem 1rem 1rem;
+    scrollbar-width: none;
+    /* Hide scrollbar Firefox */
+    -ms-overflow-style: none;
+    /* Hide scrollbar IE/Edge */
+}
+
+.diet-filter-scroller::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar Chrome/Safari */
+}
+
+.diet-filter-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 9999px;
+    /* Pill shape */
+    border: 1px solid #e5e7eb;
+    background: white;
+    color: #374151;
+    font-size: 0.95rem;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    /* Prevent shrinking */
+}
+
+.diet-filter-chip:hover {
+    background: #f9fafb;
+}
+
+.diet-filter-chip.active {
+    background: #00bfa5;
+    /* Teal color matching screenshot */
+    border-color: #00bfa5;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 191, 165, 0.3);
+}
+
+.chip-icon-emoji {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.chip-icon-img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+/* Specific styling for the active state icon if it's an SVG mask, 
+   but for now we are using colored SVGs or emojis. 
+   If SVGs are black-and-white, we might want to invert them on active. 
+   Filter can do that for simple black icons. */
+.diet-filter-chip.active .chip-icon-img {
+    filter: brightness(0) invert(1);
+    /* Turn black icons to white */
+}

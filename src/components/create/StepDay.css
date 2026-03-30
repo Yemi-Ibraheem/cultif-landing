@@ -1,0 +1,67 @@
+.step-day {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.day-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.day-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.day-card:hover {
+  border-color: #20b2aa;
+}
+
+.day-card.selected {
+  border-color: #20b2aa;
+  background-color: rgba(32, 178, 170, 0.05);
+}
+
+.day-radio {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+}
+
+.day-card.selected .day-radio {
+  border-color: #20b2aa;
+}
+
+.day-radio-inner {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: background-color 0.2s;
+}
+
+.day-radio-inner.active {
+  background-color: #20b2aa;
+}
+
+.day-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+}

@@ -1,0 +1,80 @@
+.rules-of-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.rules-subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.rules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-left: 1.25rem;
+  color: #333;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.rules-list li {
+  padding-left: 0.25rem;
+}
+
+.rules-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.rules-checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: #20b2aa;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.rules-checkbox-text {
+  font-size: 0.9rem;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.rules-checkbox-text.agreed {
+  color: #20b2aa;
+  font-weight: 500;
+}
+
+.rules-upload-btn {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 25px;
+  background-color: #ccc;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: not-allowed;
+  transition: all 0.3s;
+}
+
+.rules-upload-btn.active {
+  background-color: #20b2aa;
+  cursor: pointer;
+}
+
+.rules-upload-btn.active:hover {
+  background-color: #1a9e97;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.3);
+}

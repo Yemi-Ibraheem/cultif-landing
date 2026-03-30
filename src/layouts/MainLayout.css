@@ -1,0 +1,48 @@
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  /* Ensure content doesn't overflow horizontally */
+  overflow-x: hidden;
+}
+
+.mobile-nav-wrapper {
+  display: block;
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
+}
+
+/* Desktop Breakpoint */
+@media (min-width: 1024px) {
+  .main-layout {
+    flex-direction: row;
+  }
+
+  .main-content {
+    margin-left: 244px;
+    width: calc(100% - 244px);
+    max-width: 975px;
+    margin-right: auto;
+    background: #fff;
+  }
+
+  /* Specific rule for the homepage/discover to safely fit 2 recipe cards + right pane */
+  .main-layout.discover-layout .main-content {
+    max-width: 1060px;
+  }
+
+  /* Remove grey page backgrounds in desktop mode */
+  .main-content>* {
+    background: #fff !important;
+  }
+
+  .mobile-nav-wrapper {
+    display: none;
+  }
+}

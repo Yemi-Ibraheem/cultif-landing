@@ -1,0 +1,185 @@
+.become-chef-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 200;
+  display: flex;
+  align-items: flex-end;
+  animation: chefBackdropIn 0.2s ease;
+}
+
+@keyframes chefBackdropIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.become-chef-sheet {
+  width: 100%;
+  max-height: 90vh;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  padding: 12px 20px 40px;
+  overflow-y: auto;
+  animation: chefSheetUp 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@keyframes chefSheetUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+.become-chef-handle {
+  width: 36px;
+  height: 4px;
+  background: #ddd;
+  border-radius: 2px;
+  margin: 0 auto 16px;
+}
+
+.become-chef-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.become-chef-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.become-chef-close {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.become-chef-close:hover {
+  opacity: 0.75;
+}
+
+.become-chef-close img {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.become-chef-subtitle {
+  font-size: 0.85rem;
+  color: #888;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+
+.become-chef-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.become-chef-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  position: relative;
+}
+
+.become-chef-optional {
+  font-weight: 400;
+  color: #aaa;
+}
+
+.become-chef-bio {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  color: #333;
+  font-size: 0.9rem;
+  padding: 12px 14px;
+  resize: none;
+  font-family: inherit;
+  line-height: 1.5;
+  outline: none;
+}
+
+.become-chef-bio:focus {
+  border-color: #20b2aa;
+}
+
+.become-chef-char-count {
+  font-size: 11px;
+  color: #bbb;
+  text-align: right;
+  margin-top: -4px;
+}
+
+.become-chef-specialties-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.become-chef-specialties-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.become-chef-specialties-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.become-chef-specialty-chip {
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  color: #666;
+  font-size: 13px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  font-family: inherit;
+}
+
+.become-chef-specialty-chip.selected {
+  background: #f0faf9;
+  border-color: #20b2aa;
+  color: #20b2aa;
+}
+
+.become-chef-error {
+  font-size: 0.85rem;
+  color: #e53e3e;
+  margin: 0;
+}
+
+.become-chef-submit {
+  background: linear-gradient(135deg, #20b2aa, #3dd6d0);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.85rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.15s;
+}
+
+.become-chef-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

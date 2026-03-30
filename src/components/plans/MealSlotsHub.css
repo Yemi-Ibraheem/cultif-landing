@@ -1,0 +1,51 @@
+.meal-slots-hub {
+  padding: 1.5rem 1rem;
+}
+
+.meal-slots-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+
+.meal-slots-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.meal-slot-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border: 1.5px solid #eee;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.meal-slot-row:hover {
+  border-color: #ccc;
+}
+
+.meal-slot-row.filled {
+  border-color: #20b2aa;
+  background: #f0faf9;
+}
+
+.meal-slot-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.meal-slot-row.filled .meal-slot-label {
+  color: #20b2aa;
+  font-weight: 600;
+}

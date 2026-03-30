@@ -1,0 +1,2905 @@
+[
+  {
+    "id": "TC001",
+    "title": "Browse Discover feed scrollers and open filter modal",
+    "description": "Verifies the Discover page loads, horizontal scrollers can be used, and the filter modal opens.",
+    "category": "Discover Feed",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /discover"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Discover\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll horizontally through category bubbles"
+      },
+      {
+        "type": "action",
+        "description": "Scroll horizontally through country filter chips"
+      },
+      {
+        "type": "action",
+        "description": "Click on the filter icon"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Filters\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Apply multiple filters and see filtered results on the feed",
+    "description": "Verifies that applying dietary, category, country, and max duration filters updates the feed to show recipe cards.",
+    "category": "Discover Feed",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /discover"
+      },
+      {
+        "type": "action",
+        "description": "Click on the filter icon"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Filters\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Select dietary, category, country, and max duration filters"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Apply\" in the filter modal"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"recipe card\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Filters\" is not visible"
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "Apply filters that return no recipes and verify empty state",
+    "description": "Verifies the empty state message appears when no recipes match selected country and dietary filters.",
+    "category": "Discover Feed",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /discover"
+      },
+      {
+        "type": "action",
+        "description": "Click on the filter icon"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Filters\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Select country and dietary filters that match no recipes"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Apply\" in the filter modal"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"No recipes\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"recipe card\" is not visible"
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Re-open filter modal after empty results and broaden filters to recover results",
+    "description": "Verifies users can adjust filters after an empty state and return to seeing recipe cards.",
+    "category": "Discover Feed",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /discover"
+      },
+      {
+        "type": "action",
+        "description": "Click on the filter icon"
+      },
+      {
+        "type": "action",
+        "description": "Select country and dietary filters that match no recipes"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Apply\" in the filter modal"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"No recipes\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click on the filter icon"
+      },
+      {
+        "type": "action",
+        "description": "Select dietary, category, country, and max duration filters"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Apply\" in the filter modal"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"recipe card\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Change category selection via horizontal category bubbles and verify feed remains populated",
+    "description": "Verifies that interacting with the category scroller does not break the feed and recipe cards are still visible after changing category context.",
+    "category": "Discover Feed",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /discover"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"recipe card\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll horizontally through category bubbles"
+      },
+      {
+        "type": "action",
+        "description": "Click on a category bubble"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"recipe card\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll vertically on the feed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"recipe card\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Change country filter chip selection and verify feed updates without errors",
+    "description": "Verifies that selecting a country chip keeps the page functional and continues to display recipe cards (or a valid empty state).",
+    "category": "Discover Feed",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /discover"
+      },
+      {
+        "type": "action",
+        "description": "Scroll horizontally through country filter chips"
+      },
+      {
+        "type": "action",
+        "description": "Click on a country filter chip"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"recipe card\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll vertically on the feed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"recipe card\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Open filter modal, apply max duration only, and verify results still render",
+    "description": "Verifies that applying only a max duration filter successfully returns to the feed and shows recipe cards.",
+    "category": "Discover Feed",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /discover"
+      },
+      {
+        "type": "action",
+        "description": "Click on the filter icon"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Filters\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Select dietary, category, country, and max duration filters"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Apply\" in the filter modal"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"recipe card\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Open a recipe preview bottom sheet from the Explore grid",
+    "description": "Verifies a user can open a recipe preview bottom sheet by tapping a grid cell.",
+    "category": "Explore Grid",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /explore"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"3-column recipe image grid\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll vertically through 3-column image grid"
+      },
+      {
+        "type": "action",
+        "description": "Tap a grid cell to open recipe preview bottom sheet"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"recipe preview bottom sheet\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"View Recipe\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Dismiss the recipe preview bottom sheet by tapping outside",
+    "description": "Verifies the recipe preview bottom sheet can be dismissed by tapping outside of it.",
+    "category": "Explore Grid",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /explore"
+      },
+      {
+        "type": "action",
+        "description": "Tap a grid cell to open recipe preview bottom sheet"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"recipe preview bottom sheet\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Tap outside bottom sheet to dismiss it"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"recipe preview bottom sheet\" is not visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"3-column recipe image grid\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Navigate to recipe detail from bottom sheet using View Recipe",
+    "description": "Verifies the View Recipe button in the bottom sheet navigates to the recipe detail page.",
+    "category": "Explore Grid",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /explore"
+      },
+      {
+        "type": "action",
+        "description": "Tap a grid cell to open recipe preview bottom sheet"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"View Recipe\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Tap View Recipe button in bottom sheet to navigate to recipe detail"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/recipe/\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"ingredients\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "Scroll the Explore grid to load more content and still open previews",
+    "description": "Verifies scrolling through the grid continues to work and grid items remain tappable after scrolling.",
+    "category": "Explore Grid",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /explore"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"3-column recipe image grid\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll vertically through 3-column image grid"
+      },
+      {
+        "type": "action",
+        "description": "Scroll vertically through 3-column image grid"
+      },
+      {
+        "type": "action",
+        "description": "Tap a grid cell to open recipe preview bottom sheet"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"recipe preview bottom sheet\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC012",
+    "title": "Explore grid is visible and usable after returning from recipe detail via in-app navigation",
+    "description": "Verifies the user can reach recipe detail from Explore and then use in-app UI to return to Explore and continue browsing.",
+    "category": "Explore Grid",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /explore"
+      },
+      {
+        "type": "action",
+        "description": "Tap a grid cell to open recipe preview bottom sheet"
+      },
+      {
+        "type": "action",
+        "description": "Tap View Recipe button in bottom sheet to navigate to recipe detail"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/recipe/\""
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Explore\" in the app navigation"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/explore\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"3-column recipe image grid\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC013",
+    "title": "Subscribed user can view full ingredients and start cooking from Recipe Detail",
+    "description": "Verifies a subscribed user can open the ingredients modal, see the full ingredients list, and proceed to cooking steps.",
+    "category": "Recipe Detail",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "action",
+        "description": "Click on any recipe card in the feed"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Ingredients\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Ingredients\" modal is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Subscribe to see all ingredients\" is not visible"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Cook Now\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/cook\""
+      }
+    ]
+  },
+  {
+    "id": "TC014",
+    "title": "Not subscribed user sees ingredients paywall notice and can open paywall from Recipe Detail",
+    "description": "Verifies an unsubscribed user sees the locked ingredients notice and can navigate to the paywall.",
+    "category": "Recipe Detail",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "action",
+        "description": "Click on any recipe card in the feed"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Ingredients\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Ingredients\" modal is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Subscribe to see all ingredients\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Subscribe to see all ingredients\" notice"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/paywall\""
+      }
+    ]
+  },
+  {
+    "id": "TC015",
+    "title": "Recipe Detail displays core recipe content (cover image/title/description)",
+    "description": "Verifies the recipe page shows the essential visible content sections when opened from the feed.",
+    "category": "Recipe Detail",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "action",
+        "description": "Click on any recipe card in the feed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Recipe cover image\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Recipe title\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Recipe description\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC016",
+    "title": "Chef name link from Recipe Detail navigates to Chef Profile",
+    "description": "Verifies tapping the chef name on Recipe Detail routes to the chef profile page.",
+    "category": "Recipe Detail",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "action",
+        "description": "Click on any recipe card in the feed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Chef info\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click the chef name in the chef info section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/chef/\""
+      }
+    ]
+  },
+  {
+    "id": "TC017",
+    "title": "Ingredients modal can be opened and closed from Recipe Detail",
+    "description": "Verifies the ingredients modal opens from the Ingredients button and can be dismissed without leaving the recipe page.",
+    "category": "Recipe Detail",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "action",
+        "description": "Click on any recipe card in the feed"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Ingredients\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Ingredients\" modal is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click the modal close button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Ingredients\" modal is not visible"
+      }
+    ]
+  },
+  {
+    "id": "TC018",
+    "title": "Cook Now from Recipe Detail routes to cooking steps screen",
+    "description": "Verifies the Cook Now call-to-action transitions the user from Recipe Detail to the cooking steps route.",
+    "category": "Recipe Detail",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "action",
+        "description": "Click on any recipe card in the feed"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Cook Now\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/cook\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Cooking steps\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC019",
+    "title": "Not subscribed user can still access Cook Now from Recipe Detail (gating handled elsewhere)",
+    "description": "Verifies that for an unsubscribed user, the Cook Now action transitions away from Recipe Detail (either to cook steps or to a gate) without UI errors.",
+    "category": "Recipe Detail",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "action",
+        "description": "Click on any recipe card in the feed"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Ingredients\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Subscribe to see all ingredients\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click the modal close button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Cook Now\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/recipe/\""
+      }
+    ]
+  },
+  {
+    "id": "TC020",
+    "title": "Open paywall and view chef info and pricing options",
+    "description": "Verifies the paywall page loads for an authenticated user and displays chef information and subscription options.",
+    "category": "Paywall / Subscription Gate",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "action",
+        "description": "Click on any recipe card in the Discover feed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Subscription\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Monthly\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC021",
+    "title": "Select Monthly plan and initiate subscription",
+    "description": "Verifies a user can select the monthly option and start the subscription flow from the paywall.",
+    "category": "Paywall / Subscription Gate",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "action",
+        "description": "Click on any recipe card in the Discover feed"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Monthly\" plan option"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Subscribe\" button"
+      }
+    ]
+  },
+  {
+    "id": "TC022",
+    "title": "Select Annual plan and initiate subscription",
+    "description": "Verifies a user can select the annual option and start the subscription flow from the paywall.",
+    "category": "Paywall / Subscription Gate",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "action",
+        "description": "Click on any recipe card in the Discover feed"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Annual\" plan option"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Subscribe\" button"
+      }
+    ]
+  },
+  {
+    "id": "TC023",
+    "title": "Verify selected plan state changes when switching between Monthly and Annual",
+    "description": "Verifies the user can toggle between plans and the UI reflects the selection before subscribing.",
+    "category": "Paywall / Subscription Gate",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "action",
+        "description": "Click on any recipe card in the Discover feed"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Monthly\" plan option"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Monthly (selected)\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Annual\" plan option"
+      }
+    ]
+  },
+  {
+    "id": "TC024",
+    "title": "Subscribe button is blocked or prompts selection when no plan is chosen",
+    "description": "Verifies the paywall prevents initiating subscription without selecting a plan (or provides an on-screen prompt).",
+    "category": "Paywall / Subscription Gate",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "action",
+        "description": "Click on any recipe card in the Discover feed"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Subscribe\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Select a plan\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC025",
+    "title": "Payment failure shows an error and allows retry (Monthly plan)",
+    "description": "Verifies that when checkout fails after subscribing to the monthly plan, the user sees an error message and can try again.",
+    "category": "Paywall / Subscription Gate",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "action",
+        "description": "Click on any recipe card in the Discover feed"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Monthly\" plan option"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Subscribe\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Payment failed\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC026",
+    "title": "Chef profile information is visible on the paywall",
+    "description": "Verifies the paywall includes visible chef identity details (name/avatar) to confirm who the subscription applies to.",
+    "category": "Paywall / Subscription Gate",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "action",
+        "description": "Click on any recipe card in the Discover feed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Chef profile\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Chef name\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC027",
+    "title": "Paywall shows pricing copy for both Monthly and Annual options",
+    "description": "Verifies pricing information is present for both plans so users can compare before subscribing.",
+    "category": "Paywall / Subscription Gate",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "action",
+        "description": "Click on any recipe card in the Discover feed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Monthly\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Annual\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC028",
+    "title": "Advance through cooking steps to completion screen",
+    "description": "Verifies a logged-in user can progress through all cooking steps and reach the completion screen.",
+    "category": "Recipe Cooking Steps",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on a recipe card in the feed to open its recipe detail page"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Cook\" button to enter step-by-step cooking mode"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Step\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC029",
+    "title": "Back navigation returns to previous step",
+    "description": "Verifies the Back control returns the user to the immediately previous cooking step.",
+    "category": "Recipe Cooking Steps",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on a recipe card in the feed to open its recipe detail page"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Cook\" button to enter step-by-step cooking mode"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Next\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Back\" button"
+      }
+    ]
+  },
+  {
+    "id": "TC030",
+    "title": "Step instructions are visible and update after tapping Next",
+    "description": "Verifies the step instruction content is visible and changes when advancing to the next step.",
+    "category": "Recipe Cooking Steps",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on a recipe card in the feed to open its recipe detail page"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Cook\" button to enter step-by-step cooking mode"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"instructions\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Next\" button"
+      }
+    ]
+  },
+  {
+    "id": "TC031",
+    "title": "Final step routes to completion screen",
+    "description": "Verifies that finishing the last step transitions the user to the recipe completion screen.",
+    "category": "Recipe Cooking Steps",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on a recipe card in the feed to open its recipe detail page"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Cook\" button to enter step-by-step cooking mode"
+      },
+      {
+        "type": "action",
+        "description": "Repeatedly click the \"Next\" button until the app transitions away from the steps view"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/complete\""
+      }
+    ]
+  },
+  {
+    "id": "TC032",
+    "title": "Back is disabled or does nothing on the first step",
+    "description": "Verifies that on the first cooking step, the user cannot navigate to a previous step.",
+    "category": "Recipe Cooking Steps",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on a recipe card in the feed to open its recipe detail page"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Cook\" button to enter step-by-step cooking mode"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Back\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Step 1\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC033",
+    "title": "Step 1 validation: cannot proceed without required basics (title/description/cover)",
+    "description": "Verifies Step 1 blocks progression when required basics are missing and shows a visible validation message.",
+    "category": "Recipe Creation Wizard",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Create\" or \"Create Recipe\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/create\""
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Next\" button"
+      }
+    ]
+  },
+  {
+    "id": "TC034",
+    "title": "Step 2 ingredients: add an ingredient with name, amount, and unit and proceed",
+    "description": "Verifies adding at least one ingredient with all fields allows progressing to the next step.",
+    "category": "Recipe Creation Wizard",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Create\" or \"Create Recipe\""
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Test Recipe Title\" into the title field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Test recipe description for E2E\" into the description field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Next\" button"
+      }
+    ]
+  },
+  {
+    "id": "TC035",
+    "title": "Step 2 validation: missing ingredient unit or amount prevents continuing",
+    "description": "Verifies the wizard requires complete ingredient fields (name, amount, unit) before proceeding.",
+    "category": "Recipe Creation Wizard",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Create\" or \"Create Recipe\""
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Recipe Missing Ingredient Fields\" into the title field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Description\" into the description field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Next\" button"
+      }
+    ]
+  },
+  {
+    "id": "TC036",
+    "title": "Country selection: selecting a country of origin advances to time step",
+    "description": "Verifies Step 3 country selection is required and can be selected to proceed to Step 4.",
+    "category": "Recipe Creation Wizard",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Create\" or \"Create Recipe\""
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Country Step Test\" into the title field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Description\" into the description field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Next\" button"
+      }
+    ]
+  },
+  {
+    "id": "TC037",
+    "title": "Time entry: set prep and cook time and proceed",
+    "description": "Verifies Step 4 accepts prep and cook times and allows moving forward.",
+    "category": "Recipe Creation Wizard",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Create\" or \"Create Recipe\""
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Time Step Test\" into the title field"
+      },
+      {
+        "type": "action",
+        "description": "Fill \"Description\" into the description field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Next\" button"
+      }
+    ]
+  },
+  {
+    "id": "TC038",
+    "title": "Tag steps: select goal, meal type, and dietary tags and reach Step 8 video",
+    "description": "Verifies Steps 5–7 selections work end-to-end and the wizard reaches the video step.",
+    "category": "Recipe Creation Wizard",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Create\" or \"Create Recipe\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/create\""
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the step indicator"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Step 8\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC039",
+    "title": "Update display name from Profile Menu using checkmark confirmation",
+    "description": "Verifies a logged-in user can edit and save their display name from the Profile Menu and see the updated name.",
+    "category": "Profile Menu",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Profile\" entry in the app navigation"
+      },
+      {
+        "type": "action",
+        "description": "Click the pencil icon to edit the display name"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Test Name Edit\" into the display name field"
+      },
+      {
+        "type": "action",
+        "description": "Click the checkmark icon to confirm the name change"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Test Name Edit\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC040",
+    "title": "Cancel display name edit with Escape key",
+    "description": "Verifies a user can start editing their display name and cancel the edit with Escape without changing the visible name.",
+    "category": "Profile Menu",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Profile\" entry in the app navigation"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the display name text is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click the pencil icon to edit the display name"
+      },
+      {
+        "type": "action",
+        "description": "Type \"This Should Not Save\" into the display name field"
+      },
+      {
+        "type": "action",
+        "description": "Press \"Escape\" key"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"This Should Not Save\" is not visible"
+      }
+    ]
+  },
+  {
+    "id": "TC041",
+    "title": "Confirm display name edit using Enter key",
+    "description": "Verifies a user can save a display name edit by pressing Enter and see the updated name on the Profile Menu.",
+    "category": "Profile Menu",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Profile\" entry in the app navigation"
+      },
+      {
+        "type": "action",
+        "description": "Click the pencil icon to edit the display name"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Name Saved With Enter\" into the display name field"
+      },
+      {
+        "type": "action",
+        "description": "Press \"Enter\" key"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Name Saved With Enter\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC042",
+    "title": "Navigate from Profile Menu to Share Profile page",
+    "description": "Verifies the Share button on Profile Menu routes the user to the share page.",
+    "category": "Profile Menu",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Profile\" entry in the app navigation"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Share\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/profile/share\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify page title contains \"Share\""
+      }
+    ]
+  },
+  {
+    "id": "TC043",
+    "title": "Navigate to Profile Settings from Profile Menu",
+    "description": "Verifies a user can open the Profile Settings page from the Profile Menu and sees settings content.",
+    "category": "Profile Menu",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Profile\" entry in the app navigation"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Settings\" menu item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/profile/settings\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Account settings\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC044",
+    "title": "Navigate to My Dishes from Profile Menu",
+    "description": "Verifies a user can navigate to the My Dishes page from the Profile Menu and sees the dishes list page.",
+    "category": "Profile Menu",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Profile\" entry in the app navigation"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"My Dishes\" menu item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/profile/dishes\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Dishes\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC045",
+    "title": "Open Switch Account popup from Profile Menu",
+    "description": "Verifies the Switch Account control opens an account switcher popup with expected options.",
+    "category": "Profile Menu",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Profile\" entry in the app navigation"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Switch Account\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Switch Account\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Add Another Account\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC046",
+    "title": "Add Another Account option is reachable from Switch Account popup",
+    "description": "Verifies that the Add Another Account action is available and routes the user to the authentication page to add credentials.",
+    "category": "Profile Menu",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Profile\" entry in the app navigation"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Switch Account\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Add Another Account\" option"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/auth\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Sign in\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC047",
+    "title": "Open All Countries page and see countries list",
+    "description": "Verifies the All Countries page loads and shows a visible list of countries to choose from.",
+    "category": "All Countries Browser",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/countries\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Countries\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC048",
+    "title": "Scroll through countries list and confirm more entries appear",
+    "description": "Verifies the user can scroll the countries list and continue browsing without losing the page context.",
+    "category": "All Countries Browser",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the bottom of the countries list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify at least one country name is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC049",
+    "title": "Select a country and land on Discover with country query parameter",
+    "description": "Verifies tapping a country navigates to the Discover feed with a country filter reflected in the URL.",
+    "category": "All Countries Browser",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on the first visible country in the list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"country=\""
+      }
+    ]
+  },
+  {
+    "id": "TC050",
+    "title": "Selected country is reflected on Discover page UI",
+    "description": "Verifies the Discover page visually indicates the selected country filter after navigation from All Countries.",
+    "category": "All Countries Browser",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on the first visible country in the list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"country=\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Country filter\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC051",
+    "title": "Discover shows an empty state when selected country has no matching recipes",
+    "description": "Verifies the app shows an empty state message when a selected country returns no results in Discover.",
+    "category": "All Countries Browser",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the bottom of the countries list"
+      },
+      {
+        "type": "action",
+        "description": "Click on a country near the bottom of the list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"No recipes\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC052",
+    "title": "Country selection works after scrolling (mid-list selection)",
+    "description": "Verifies selecting a country after scrolling still navigates correctly to the filtered Discover feed.",
+    "category": "All Countries Browser",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the middle of the countries list"
+      },
+      {
+        "type": "action",
+        "description": "Click on a country visible in the middle of the list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"country=\""
+      }
+    ]
+  },
+  {
+    "id": "TC053",
+    "title": "All Countries page shows flags alongside country names",
+    "description": "Verifies each country entry presents a flag icon (or flag placeholder) visibly next to the country name.",
+    "category": "All Countries Browser",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Country flag icon\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify at least one country name is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC054",
+    "title": "Create a new meal plan with name and description and save",
+    "description": "Verifies a signed-in user can create a meal plan and see it appear in the meal plans list.",
+    "category": "Meal Plans",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Plans\" navigation item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/plans\""
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Create Plan\" button"
+      }
+    ]
+  },
+  {
+    "id": "TC055",
+    "title": "Complete plan details step in Create Plan wizard",
+    "description": "Verifies the Create Plan wizard accepts a plan name and description and proceeds to slot assignment.",
+    "category": "Meal Plans",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Plans\" navigation item"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Create Plan\" button"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Weekly Plan A\" into the plan name field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"Meals for the week\" into the plan description field"
+      }
+    ]
+  },
+  {
+    "id": "TC056",
+    "title": "Assign a recipe to a breakfast slot via Browse Recipes overlay",
+    "description": "Verifies the user can open the Browse Recipes overlay for a slot and select a recipe to populate it.",
+    "category": "Meal Plans",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Plans\" navigation item"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Create Plan\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Add\" (or empty) button for the first day Breakfast slot"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Browse Recipes\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC057",
+    "title": "Save a meal plan after assigning at least one slot",
+    "description": "Verifies saving a plan returns to /plans and the new plan is visible in the list.",
+    "category": "Meal Plans",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Plans\" navigation item"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Create Plan\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Save\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/plans\""
+      }
+    ]
+  },
+  {
+    "id": "TC058",
+    "title": "View list of existing meal plans on /plans",
+    "description": "Verifies the meal plans list page renders and shows existing plans section/list UI.",
+    "category": "Meal Plans",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Plans\" navigation item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/plans\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Meal Plans\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Create Plan\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC059",
+    "title": "Validation: attempt to save with missing plan name shows an error",
+    "description": "Verifies the wizard blocks saving when required plan name is empty and shows a visible validation message.",
+    "category": "Meal Plans",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Plans\" navigation item"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Create Plan\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Save\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Plan name\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC060",
+    "title": "Cancel/exit Create Plan wizard returns to Plans list without saving",
+    "description": "Verifies the user can exit the wizard and is returned to /plans without confirmation of a saved plan.",
+    "category": "Meal Plans",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Plans\" navigation item"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Create Plan\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Back\" (or \"Cancel\") button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/plans\""
+      }
+    ]
+  },
+  {
+    "id": "TC061",
+    "title": "View chef profile header details (avatar, name, bio)",
+    "description": "Verifies a logged-in user can open a chef profile and see the chef’s basic public information.",
+    "category": "Chef Profile",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to /profile"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Profile\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Discover\" navigation item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Discover\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC062",
+    "title": "Open a chef profile from the app and view recipe list section",
+    "description": "Verifies a logged-in user can reach a chef profile and scroll the published recipes area.",
+    "category": "Chef Profile",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Explore\" navigation item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Explore\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the recipe grid"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Recipes\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC063",
+    "title": "Navigate from chef profile to a recipe detail page via a recipe card",
+    "description": "Verifies selecting a chef’s recipe from their profile navigates to the recipe detail experience.",
+    "category": "Chef Profile",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Discover\" navigation item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Discover\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click on the first visible recipe card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Ingredients\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC064",
+    "title": "Subscribe button is visible on chef profile and opens subscription/paywall entry",
+    "description": "Verifies the chef profile shows a Subscribe action and tapping it leads into a paywall/checkout entry state.",
+    "category": "Chef Profile",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Discover\" navigation item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Discover\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click on a visible chef name or chef avatar on a recipe card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Subscribe\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC065",
+    "title": "Chef profile loads without recipes (empty state)",
+    "description": "Verifies the chef profile handles a chef with no published recipes by showing an empty-state message.",
+    "category": "Chef Profile",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Profile\" navigation item"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Share\" option"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Share\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"No recipes\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC066",
+    "title": "View My Dishes grid for a logged-in chef",
+    "description": "Verifies a chef can reach My Dishes and see their uploaded recipes grid.",
+    "category": "My Dishes",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/discover\""
+      },
+      {
+        "type": "action",
+        "description": "Click \"Profile\" in the app navigation"
+      },
+      {
+        "type": "action",
+        "description": "Click \"My Dishes\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify page title contains \"My Dishes\""
+      }
+    ]
+  },
+  {
+    "id": "TC067",
+    "title": "Open a recipe detail from My Dishes",
+    "description": "Verifies tapping a recipe card in My Dishes navigates to the recipe detail page.",
+    "category": "My Dishes",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click \"Profile\" in the app navigation"
+      },
+      {
+        "type": "action",
+        "description": "Click \"My Dishes\""
+      },
+      {
+        "type": "action",
+        "description": "Click on the first recipe card in the grid"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/recipe/\""
+      }
+    ]
+  },
+  {
+    "id": "TC068",
+    "title": "Start editing a recipe from My Dishes via the edit overlay",
+    "description": "Verifies the edit control on a recipe from My Dishes opens the recipe creation wizard in edit mode.",
+    "category": "My Dishes",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click \"Profile\" in the app navigation"
+      },
+      {
+        "type": "action",
+        "description": "Click \"My Dishes\""
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Edit\" overlay/button on the first recipe card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/create\""
+      }
+    ]
+  },
+  {
+    "id": "TC069",
+    "title": "Edit and submit changes to an existing recipe and return to recipe detail",
+    "description": "Verifies a chef can submit an edit through the creation wizard and see the updated recipe detail page.",
+    "category": "My Dishes",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click \"Profile\" in the app navigation"
+      },
+      {
+        "type": "action",
+        "description": "Click \"My Dishes\""
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Edit\" overlay/button on the first recipe card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Edit\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC070",
+    "title": "Cancel deletion from confirmation modal",
+    "description": "Verifies canceling the delete confirmation leaves the recipe visible in My Dishes.",
+    "category": "My Dishes",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click \"Profile\" in the app navigation"
+      },
+      {
+        "type": "action",
+        "description": "Click \"My Dishes\""
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Delete\" button on the first recipe card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Are you sure\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC071",
+    "title": "Delete a recipe successfully from My Dishes (if confirmation modal allows)",
+    "description": "Verifies confirming deletion removes the recipe from the grid.",
+    "category": "My Dishes",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /auth"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click \"Profile\" in the app navigation"
+      },
+      {
+        "type": "action",
+        "description": "Click \"My Dishes\""
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Delete\" button on the first recipe card"
+      },
+      {
+        "type": "action",
+        "description": "Click \"Confirm\" in the deletion confirmation modal"
+      }
+    ]
+  }
+]

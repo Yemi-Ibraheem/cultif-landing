@@ -1,0 +1,82 @@
+.dietary-goal-step {
+  padding: 1.5rem 1rem;
+}
+
+.dietary-goal-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+
+.dietary-goal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dietary-goal-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  border: 1.5px solid #eee;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: border-color 0.15s;
+}
+
+.dietary-goal-option:hover {
+  border-color: #ccc;
+}
+
+.dietary-goal-option.selected {
+  border-color: #20b2aa;
+  background: #f0faf9;
+}
+
+.dietary-goal-radio {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: border-color 0.15s;
+}
+
+.dietary-goal-option.selected .dietary-goal-radio {
+  border-color: #20b2aa;
+}
+
+.dietary-goal-radio-inner {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #20b2aa;
+}
+
+.dietary-goal-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.dietary-goal-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.dietary-goal-desc {
+  font-size: 0.75rem;
+  color: #888;
+  line-height: 1.3;
+}

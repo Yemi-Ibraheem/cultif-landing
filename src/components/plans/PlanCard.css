@@ -1,0 +1,84 @@
+.plan-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+
+.plan-card:hover {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.plan-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plan-card-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.plan-card-date {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.plan-card-meals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.plan-card-meal-badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  background: #f5f5f5;
+  color: #888;
+  text-transform: capitalize;
+}
+
+.plan-card-meal-badge.filled {
+  background: #e6f9f7;
+  color: #20b2aa;
+}
+
+.plan-card-footer {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.plan-card-goal {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #20b2aa;
+  background: #e6f9f7;
+  padding: 0.15rem 0.5rem;
+  border-radius: 8px;
+}
+
+.plan-card-count {
+  font-size: 0.7rem;
+  color: #888;
+}
+
+.plan-card-creator {
+  font-size: 0.7rem;
+  color: #aaa;
+  margin-left: auto;
+}

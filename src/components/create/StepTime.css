@@ -1,0 +1,89 @@
+.step-time {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.time-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.time-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.time-picker-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.time-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.time-number-input {
+  width: 64px;
+  height: 64px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  color: #20b2aa;
+  outline: none;
+  transition: border-color 0.2s;
+  -moz-appearance: textfield;
+}
+
+.time-number-input::-webkit-outer-spin-button,
+.time-number-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.time-number-input:focus {
+  border-color: #20b2aa;
+}
+
+.time-unit {
+  font-size: 0.7rem;
+  color: #999;
+  text-transform: uppercase;
+}
+
+.time-separator {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.step-time-counter {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ff9800;
+  display: block;
+}
+
+.step-time-counter--met {
+  color: #20b2aa;
+}
+
+.time-description {
+  font-size: 0.78rem;
+  color: #999;
+  text-align: center;
+  margin: -0.5rem 0 0.5rem;
+  line-height: 1.4;
+  padding: 0 1rem;
+}

@@ -1,0 +1,112 @@
+.nutrition-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.nutrition-modal {
+  width: 100%;
+  max-width: 480px;
+  max-height: 85vh;
+  background: linear-gradient(180deg, #4dd0e1 0%, #26c6da 100%);
+  border-radius: 24px 24px 0 0;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  overflow-y: auto;
+}
+
+.nutrition-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nutrition-modal-close {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nutrition-modal-header h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+
+.nutrition-modal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nutrition-modal-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nutrition-modal-info {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.nutrition-modal-label {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.nutrition-modal-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+}
+
+.nutrition-modal-bar-track {
+  flex: 1;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.nutrition-modal-bar-fill {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.4s ease;
+}
+
+.nutrition-modal-percent {
+  width: 40px;
+  text-align: right;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+  flex-shrink: 0;
+}
+
+.nutrition-modal-disclaimer {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  padding-top: 0.5rem;
+}

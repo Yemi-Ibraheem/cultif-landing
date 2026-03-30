@@ -1,0 +1,67 @@
+.week-calendar {
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.week-calendar-header {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 0.75rem;
+}
+
+.week-calendar-strip {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.25rem;
+}
+
+.week-calendar-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background 0.15s;
+  min-width: 40px;
+}
+
+.week-calendar-day:hover {
+  background: #f0f0f0;
+}
+
+.week-calendar-day.selected {
+  background: #20b2aa;
+}
+
+.week-calendar-day.selected .week-day-label,
+.week-calendar-day.selected .week-day-number {
+  color: white;
+}
+
+.week-day-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.week-day-number {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #333;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.week-calendar-day.selected .week-day-number {
+  background: rgba(255, 255, 255, 0.2);
+}

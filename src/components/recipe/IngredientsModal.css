@@ -1,0 +1,99 @@
+.ingredients-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.ingredients-modal {
+  width: 100%;
+  max-width: 480px;
+  max-height: 85vh;
+  background: linear-gradient(180deg, #4dd0e1 0%, #26c6da 100%);
+  border-radius: 24px 24px 0 0;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  overflow-y: auto;
+}
+
+.ingredients-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ingredients-modal-close {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ingredients-modal-header h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+}
+
+.ingredients-modal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ingredients-modal-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+}
+
+.ingredients-modal-row.locked {
+  opacity: 0.5;
+  filter: blur(2px);
+}
+
+.ingredients-modal-name {
+  flex: 1;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: white;
+}
+
+.ingredients-modal-amount {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.ingredients-modal-lock-notice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -1,0 +1,25 @@
+.recipe-carousel {
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+.recipe-carousel-content {
+  display: flex;
+  gap: 1rem;
+  padding: 0 1rem;
+  /* keep padding so first item isn't flush against edge initially */
+  overflow-x: auto;
+  scrollbar-width: none;
+  /* Hide scrollbar for mobile feel */
+  -ms-overflow-style: none;
+}
+
+.recipe-carousel-content::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-empty {
+  padding: 2rem;
+  text-align: center;
+  color: #999;
+}

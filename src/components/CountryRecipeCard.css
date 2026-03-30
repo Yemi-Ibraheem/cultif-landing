@@ -1,0 +1,60 @@
+.country-recipe-card {
+  min-width: 110px;
+  /* Much smaller card width */
+  width: 110px;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.country-recipe-card:hover {
+  transform: translateY(-2px);
+}
+
+.recipe-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 110px;
+  /* Square thumbnail */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.country-info {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0 0.25rem;
+}
+
+.country-flag-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  border-radius: 2px;
+  /* Optional: slight rounded corners for flags */
+}
+
+.country-flag-emoji {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.country-name {
+  color: #333;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,116 @@
+.schedule-send-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 1rem;
+}
+
+.schedule-send-modal {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.schedule-send-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.schedule-back-btn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  color: #333;
+}
+
+.schedule-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.schedule-subtitle {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0;
+}
+
+.schedule-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.schedule-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.schedule-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.schedule-input {
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.schedule-input:focus {
+  border-color: #20b2aa;
+}
+
+.schedule-next-btn {
+  width: 100%;
+  padding: 0.875rem;
+  border: none;
+  border-radius: 25px;
+  background-color: #20b2aa;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.schedule-next-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.schedule-next-btn:hover:not(:disabled) {
+  background-color: #1a9e97;
+}
+
+.schedule-skip-btn {
+  background: none;
+  border: none;
+  color: #20b2aa;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem;
+  text-align: center;
+}

@@ -1,0 +1,222 @@
+/* Main container wrapper */
+.featured-recipe-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  /* Reduced from 0.5rem */
+  margin: 0 1rem;
+  margin-bottom: 1.5rem;
+  /* Reduced from 2rem */
+  /* Spacing after the whole component */
+  cursor: pointer;
+}
+
+/* Main Single Box Container */
+.featured-recipe-box {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem 1rem;
+  /* background: white;  REMOVED */
+  /* border-radius: 20px; Keep radius if image needs it, but usually shadows go with bg. 
+     If user wants no background, maybe no border radius on the container, 
+     but the image might still need it. Let's keep overflow:hidden. */
+  border-radius: 2px;
+  /* Reduced to 2px */
+  overflow: hidden;
+  /* box-shadow: 0 4px 16px rgba(0,0,0,0.1); REMOVED */
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.featured-recipe-box:hover {
+  transform: translateY(-2px);
+  /* box-shadow: 0 8px 24px rgba(0,0,0,0.15); REMOVED */
+}
+
+/* 1. TOP HEADER (Flexible height for larger font) */
+.box-header {
+  /* height: 20px;  Removed strict limit to fit H2 font */
+  min-height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+  /* Reduced padding since no card edge */
+  /* background: white; REMOVED */
+  margin-bottom: 4px;
+}
+
+/* ... title ... */
+
+.box-title {
+  font-size: 1.5rem;
+  /* H2-ish size */
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  max-width: 60%;
+  line-height: 1.2;
+}
+
+.box-country {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: #666;
+  white-space: nowrap;
+  line-height: 20px;
+}
+
+.country-flag-icon {
+  width: 20px;
+  height: auto;
+  object-fit: contain;
+}
+
+.country-flag-emoji {
+  font-size: 16px;
+  line-height: 20px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* 2. MIDDLE IMAGE (376px) */
+/* ... image container ... */
+.box-image-container {
+  height: 376px;
+  /* Default for mobile */
+  min-height: 376px;
+  /* Enforce */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  /* Add radius to image since container lost its visual card definition */
+}
+
+.box-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Chef overlay on image */
+.box-chef-overlay {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 20px;
+  padding: 4px 10px 4px 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.box-chef-overlay:hover {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.box-chef-overlay-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid #fff;
+}
+
+.box-chef-overlay-name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 3. BOTTOM FOOTER */
+.box-footer {
+  height: 66px;
+  min-height: 66px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.box-icons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  height: 100%;
+}
+
+.box-diet-icon {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  object-fit: contain;
+}
+
+/* ICON SIZING RULE:
+   Standard icon size is 50px.
+   If an icon visually appears ~1 unit smaller than the others at 50px
+   (i.e. its artwork has more internal padding/whitespace), override it to 58px
+   so it looks optically equal. Apply the --large modifier class in that case.
+   Example: Protein.svg uses this override. */
+.box-diet-icon--large {
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
+  min-height: 58px;
+}
+
+.box-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.35rem;
+  color: #333;
+  height: 100%;
+}
+
+.rating-star {
+  font-size: 1.2rem;
+}
+
+.rating-score {
+  font-weight: 700;
+}
+
+.rating-count {
+  color: #888;
+  font-size: 1.2rem;
+}
+
+/* Legacy styles removed. 
+   Only .featured-recipe-box and .box-* classes are used now. 
+*/
+
+/* Desktop Breakpoint */
+@media (min-width: 1024px) {
+  .featured-recipe-layout {
+    margin: 0;
+  }
+
+  .featured-recipe-box {
+    margin: 0 0 1rem;
+    max-width: 470px;
+  }
+
+  .box-image-container {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4/5;
+  }
+}

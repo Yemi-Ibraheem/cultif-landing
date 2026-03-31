@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import logoBlack from '../assets/Logo/Black.png';
 import chefPlating from '../assets/Landing/chef-plating.png';
 import chefAmara from '../assets/Landing/Nigerian-chef-Kensington-22.webp';
@@ -22,7 +21,6 @@ const row1Images = [...homepageDishes, ...homepageDishes.slice(0, 4)];
 const row2Images = [...homepageDishes.slice(4), ...homepageDishes, ...homepageDishes.slice(0, 4)].slice(0, 12);
 
 export default function Landing() {
-  const navigate = useNavigate();
 
   const handleGetStarted = () => window.location.href = "https://app.cultif.com/auth"
   const handleLogin = () => window.location.href = "https://app.cultif.com/auth"
@@ -339,16 +337,16 @@ export default function Landing() {
 
             <div className="footer-col">
               <h4>Company</h4>
-              <button onClick={() => navigate('/blog')}>Creator Stories</button>
+              <button onClick={() => window.location.href = "https://app.cultif.com/blog"}>Creator Stories</button>
               <a href="#">Our Team</a>
               <a href="#">Contact Us</a>
             </div>
 
             <div className="footer-col">
               <h4>Legal</h4>
-              <button onClick={() => navigate('/privacy')}>Privacy Policy</button>
-              <button onClick={() => navigate('/terms')}>Terms of Service</button>
-              <button onClick={() => navigate('/creator-agreement')}>Creator Agreement</button>
+              <button onClick={() => window.location.href = "https://app.cultif.com/privacy"}>Privacy Policy</button>
+              <button onClick={() => window.location.href = "https://app.cultif.com/terms"}>Terms of Service</button>
+              <button onClick={() => window.location.href = "https://app.cultif.com/creator-agreement"}>Creator Agreement</button>
             </div>
           </div>
         </div>
